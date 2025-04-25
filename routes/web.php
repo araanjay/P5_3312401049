@@ -22,3 +22,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/register', [RegisterController::class, 'index']);
 
+
+use App\Http\Controllers\ProductController;
+
+Route::get('/product', [ProductController::class, 'show']);
