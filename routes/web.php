@@ -22,3 +22,17 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/register', [RegisterController::class, 'index']);
 
+
+Route::get('/produk', function () {
+    return view('productpage');
+});
+
+use App\Http\Controllers\UserController;
+
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+
+
+
+Route::get('/home', function () {
+    return view('pages/home');
+});

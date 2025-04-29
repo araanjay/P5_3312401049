@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -8,75 +8,74 @@
 </head>
 <body class="bg-[#f5f5f5] font-sans">
   <!-- Navbar -->
-  <nav class="bg-[#b4e176] text-black px-6 py-4 flex justify-between items-center">
-    <div class="flex items-center space-x-3">
-      <img src="/path-to-logo.png" alt="Logo" class="w-10 h-10">
-      <span class="text-lg font-bold">MATRIX</span>
+  <nav class="bg-[#556B2F] text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <div class="flex items-center gap-3">
+      <img src="/path-to-logo.png" alt="Logo" class="w-10 h-10 object-contain" />
+      <span class="text-xl font-bold tracking-wide">MATRIX</span>
     </div>
-    <ul class="flex space-x-6 font-medium">
-      <li><a href="#" class="hover:text-gray-800">Home</a></li>
-      <li><a href="#" class="hover:text-gray-800">Spesifikasi</a></li>
-      <li><a href="#" class="hover:text-gray-800">Rekomendasi</a></li>
-      <li><a href="#" class="hover:text-gray-800">Tentang</a></li>
-    </ul>
-    <div class="flex items-center space-x-4">
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="#" class="hover:text-gray-200 transition">Home</a>
+      <a href="#" class="hover:text-gray-200 transition">Spesifikasi</a>
+      <a href="#" class="hover:text-gray-200 transition">Rekomendasi</a>
+      <a href="#" class="hover:text-gray-200 transition">Tentang</a>
+    </div>
+    <div class="flex items-center gap-4 text-white text-xl">
       <button><img src="/path-to-user-icon.png" alt="User" class="w-6 h-6"></button>
       <button><img src="/path-to-add-icon.png" alt="Add" class="w-6 h-6"></button>
     </div>
   </nav>
 
   <!-- Main Section -->
-  <main class="flex justify-center items-center py-12 px-4">
-    <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
+  <main class="flex justify-center items-center min-h-screen px-4 py-12">
+    <div class="flex flex-col md:flex-row bg-white shadow-2xl rounded-2xl overflow-hidden max-w-5xl w-full">
       <!-- Form Section -->
       <div class="p-8 md:w-[500px]">
-        <h2 class="text-center text-2xl font-bold mb-6">DAFTAR</h2>
+        <h2 class="text-center text-3xl font-bold text-[#556B2F] mb-6">DAFTAR</h2>
         <form class="space-y-4">
-          <input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
-          <input type="text" placeholder="Username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
-          <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
-          <div class="flex space-x-2">
-            <input type="password" placeholder="Kata Sandi" class="w-1/2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
-            <input type="password" placeholder="Konfirmasi Kata Sandi" class="w-1/2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
+          <input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
+          <input type="text" placeholder="Username" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
+          <div class="flex space-x-3">
+            <input type="password" placeholder="Kata Sandi" class="w-1/2 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
+            <input type="password" placeholder="Konfirmasi Kata Sandi" class="w-1/2 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
           </div>
-          <input type="text" placeholder="No Telepon" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#333]">
-          <button type="submit" class="w-full py-2 bg-[#b4e176] hover:bg-[#9fce5f] active:ring-2 active:ring-black text-black font-semibold rounded-lg shadow-md transition-all">DAFTAR</button>
+          <input type="text" placeholder="No Telepon" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#556B2F] transition" />
+          <button type="submit" class="w-full py-3 bg-[#556B2F] hover:bg-[#6e8239] text-white font-bold rounded-xl shadow-md transition duration-300">DAFTAR</button>
         </form>
-        <p class="text-center mt-4">Sudah punya akun? <a href="#" class="text-black font-semibold">Masuk</a></p>
+        <p class="text-center mt-4 text-sm">Sudah punya akun? <a href="#" class="text-[#556B2F] font-semibold hover:underline">Masuk</a></p>
       </div>
 
       <!-- Welcome Section -->
-      <div class="bg-gradient-to-br from-[#b4e176] to-[#5a9224] md:w-[320px] flex flex-col justify-center items-center p-6 text-white">
-        <img src="/path-to-logo.png" alt="Matrix Logo" class="w-16 mb-4">
-        <h3 class="text-lg font-semibold mb-2">Selamat Datang di Matrix</h3>
-        <p class="text-sm text-center">Warnet lebih praktis, internetan jadi asik</p>
+      <div class="bg-gradient-to-b from-[#3e4f1c] to-[#a4bf6b] flex-1 flex flex-col justify-center items-center p-8 text-white">
+        <img src="/path-to-logo.png" alt="Matrix Logo" class="w-20 mb-6">
+        <h3 class="text-xl font-semibold mb-2">Selamat Datang di Matrix</h3>
+        <p class="text-sm text-center leading-relaxed">Warnet lebih praktis,<br>internetan jadi asik!</p>
       </div>
     </div>
   </main>
 
- <!-- Footer -->
- <footer class="bg-gray-200 mt-12">
-    <div class="grid md:grid-cols-5 gap-8 p-8 text-sm">
-      <div class="col-span-1">
-        <img src="your-logo.png" alt="Logo" class="h-8 mb-2">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p class="mt-2">Matrix, 2025</p>
+  <!-- Footer -->
+  <footer class="bg-gray-200 mt-12 text-gray-800 text-sm">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div>
+        <img src="/your-logo.png" alt="Logo" class="w-20 mb-2">
+        <p class="text-gray-600 text-sm">Matrix Warnet</p>
       </div>
       <div>
-        <h4 class="font-bold mb-2">Jelajahi Kami</h4>
-        <ul>
-          <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Kontak</a></li>
-          <li><a href="#">Bantuan</a></li>
+        <h4 class="font-semibold mb-2 text-[#556B2F]">Jelajahi Kami</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:underline">Tentang Kami</a></li>
+          <li><a href="#" class="hover:underline">Kontak</a></li>
+          <li><a href="#" class="hover:underline">Bantuan</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-bold mb-2">Pembayaran</h4>
+        <h4 class="font-semibold mb-2 text-[#556B2F]">Pembayaran</h4>
         <img src="bri-logo.png" alt="BRI" class="h-5 mb-1">
         <img src="mastercard-logo.png" alt="Mastercard" class="h-5">
       </div>
       <div>
-        <h4 class="font-bold mb-2">Ikuti Kami</h4>
+        <h4 class="font-semibold mb-2 text-[#556B2F]">Ikuti Kami</h4>
         <ul>
           <li>Facebook</li>
           <li>Twitter</li>
@@ -85,7 +84,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-bold mb-2">Mitra Kami</h4>
+        <h4 class="font-semibold mb-2 text-[#556B2F]">Mitra Kami</h4>
         <ul>
           <li>ASUS</li>
           <li>ACER</li>
@@ -97,13 +96,9 @@
         </ul>
       </div>
     </div>
-    <div class="text-center py-4 text-sm" style="background-color: #B9EC74; color: white;">&copy;2025 Matrix, All Rights Reserved</div>
+    <div class="bg-[#556B2F] text-center py-3 text-white font-medium">
+      &copy;2025 Matrix, All Rights Reserved
+    </div>
   </footer>
 </body>
 </html>
-
-<!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
-
