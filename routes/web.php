@@ -36,3 +36,7 @@ Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::get('/home', function () {
     return view('pages/home');
 });
+
+use App\Http\Controllers\ProductController;
+
+Route::get('/product', [ProductController::class, 'show']);
