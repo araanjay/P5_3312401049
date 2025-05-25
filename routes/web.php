@@ -40,3 +40,7 @@ Route::get('/home', function () {
 use App\Http\Controllers\ProductController;
 
 Route::get('/product', [ProductController::class, 'show']);
+
+use App\Http\Controllers\ListProdukController;
+
+Route::get('/listproduk', [ListProdukController::class, 'show']);
