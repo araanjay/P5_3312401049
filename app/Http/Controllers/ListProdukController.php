@@ -25,4 +25,13 @@ class ListProdukController extends Controller
         // Kirim data ke view
         return view('list_produk', compact('nama', 'desc', 'harga', 'created'));
     }
+    public function simpan(Request $request)
+    {
+        $produk = new Produk;
+        $produk->nama = $request->nama;
+        $produk->harga = $request->harga;
+        $produk->save();
+
+        return redirect()->back(); // atau redirect ke halaman lain
+    }
 }
