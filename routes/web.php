@@ -47,3 +47,8 @@ Route::get('/listproduk', [ListProdukController::class, 'show']);
 
 Route::post('/produk/simpan', [ListProdukController::class, 'simpan'])->name('produk.simpan');
 
+Route::get('/listproduk', [ListProdukController::class, 'show'])->name('produk.index');
+Route::post('/listproduk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
+Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
+Route::get('/listproduk/{id}/edit', [ListProdukController::class, 'edit'])->name('produk.edit');
+Route::put('/listproduk/{id}', [ListProdukController::class, 'update'])->name('produk.update');

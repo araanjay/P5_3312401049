@@ -7,31 +7,88 @@ use App\Models\Produk;
 
 class ListProdukController extends Controller
 {
+    /**
+     * Menampilkan halaman daftar produk dengan harga > 1 juta
+     */
     public function show()
     {
-        // Ambil produk dengan harga > 1 juta dan urutkan dari yang terbaru
         $produk = Produk::where('harga', '>', 1000000)
             ->orderBy('created_at', 'desc')
             ->get();
 
-        // Siapkan array untuk dikirim ke view
+        // Siapkan array untuk view
+        $nama = [];
+        $desc = [];
+        $harga = [];
+        $created = [];
+        $id = [];
+
         foreach ($produk as $p) {
-            $nama[] = $p->nama;
-            $desc[] = $p->deskripsi;
-            $harga[] = $p->harga;
+            $nama[]    = $p->nama;
+            $desc[]    = $p->deskripsi ?? '-';
+            $harga[]   = $p->harga;
             $created[] = $p->created_at;
+            $id[]      = $p->id;
         }
 
-        // Kirim data ke view
-        return view('list_produk', compact('nama', 'desc', 'harga', 'created'));
+        return view('list_produk', compact('nama', 'desc', 'harga', 'created', 'id'));
     }
+
+    /**
+     * Menyimpan produk baru
+     */
     public function simpan(Request $request)
     {
-        $produk = new Produk;
-        $produk->nama = $request->nama;
-        $produk->harga = $request->harga;
-        $produk->save();
+        $request->validate([
+            'nama'  => 'required|string|max:255',
+            'harga' => 'required|numeric|min:1',
+        ]);
 
-        return redirect()->back(); // atau redirect ke halaman lain
+        Produk::create([
+            'nama'      => $request->nama,
+            'harga'     => $request->harga,
+            'deskripsi' => $request->deskripsi ?? null,
+        ]);
+
+        return redirect()->back()->with('success', 'Produk berhasil disimpan!');
+    }
+
+    /**
+     * Menghapus produk
+     */
+    public function delete($id)
+    {
+        $produk = Produk::find($id);
+
+        if ($produk) {
+            $produk->delete();
+            return redirect()->back()->with('success', 'Produk berhasil dihapus!');
+        }
+
+        return redirect()->back()->with('error', 'Produk tidak ditemukan.');
+    }
+
+   
+    public function edit($id)
+    {
+        $produk = Produk::findOrFail($id);
+        return view('edit_produk', compact('produk'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama'  => 'required|string|max:255',
+            'harga' => 'required|numeric|min:1',
+        ]);
+
+        $produk = Produk::findOrFail($id);
+        $produk->update([
+            'nama'      => $request->nama,
+            'harga'     => $request->harga,
+            'deskripsi' => $request->deskripsi ?? null,
+        ]);
+
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil diupdate!');
     }
 }
